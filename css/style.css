@@ -1,0 +1,191 @@
+:root {
+    --color-1: #b3c4d4;
+    --color-2: #0fdfee;
+    --color-3: #0a6d8b;
+    --color-4: #465055;
+    --color-5: #232627;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Goldman', cursive;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url(/images/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: rgb(21, 177, 177);
+}
+
+/* for header */
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Goldman', cursive;
+}
+
+.navbar .logo a{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Goldman', cursive;
+}
+
+.logo a:hover{
+    width: -webkit-min-content;
+        width: -moz-min-content;
+        width: min-content;
+        background: linear-gradient(219deg,
+                var(--color-1) 19%,
+                transparent 19%,
+                transparent 20%,
+                var(--color-2) 20%,
+                var(--color-2) 39%,
+                transparent 39%,
+                transparent 40%,
+                var(--color-3) 40%,
+                var(--color-3) 59%,
+                transparent 59%,
+                transparent 60%,
+                var(--color-4) 60%,
+                var(--color-4) 79%,
+                transparent 79%,
+                transparent 80%,
+                var(--color-5) 80%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        filter: blur(0.3px);
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle-btn{
+    color: antiquewhite;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action-btn{
+    background-color: aqua;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: scale 0.2 ease;
+}
+
+.action-btn:hover{
+    scale: 1.05;
+    color: white;
+}
+
+.action-btn:active{
+    scale: 0.95;
+}
+
+/* dropdown menu */
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgb(225, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open{
+    height: 240px;
+}
+
+.dropdown-menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu .action-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* section hero */
+section#hero {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+}
+
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* responsive */
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .action-btn{
+        display: none;
+    }
+
+    .navbar .toggle-btn{
+        display: block;
+    }
+
+    .dropdown-menu{
+        display: block;
+    }
+}
+
+@media(max-width: 576px) {
+    .dropdown-menu{
+        left: 2rem;
+        width: unset;
+    }
+}
